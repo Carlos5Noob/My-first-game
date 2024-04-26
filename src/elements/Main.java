@@ -15,18 +15,24 @@ public class Main {
             salud_total -= 20;
         }
 
-        System.out.println("Salud actual del personaje: " + salud_total);
+        _showHP(salud_total);
 
         int trivial = Minigames.trivial();
 
         salud_total -= trivial;
 
-        System.out.println("Salud actual del personaje " + salud_total);
+        _showHP(salud_total);
 
         if (salud_total < 1) {
             System.out.println("GAME OVER");
             return;
         }
+
+    }
+
+    public static void _showHP(int salud) {
+
+        System.out.println("Salud actual del personaje: " + salud);
 
     }
 }
