@@ -63,6 +63,8 @@ public class Story {
 
     public static boolean combat_condor() {
 
+        ASCIIart._fight();
+
         boolean combate = false;
 
         System.out.println(
