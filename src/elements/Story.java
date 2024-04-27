@@ -32,23 +32,26 @@ public class Story {
         Scanner s = new Scanner(System.in);
 
         String opcion = s.nextLine();
-        opcion = opcion.toLowerCase();
 
         do {
             switch (opcion) {
                 case "hechizero":
+                case "Hechizero":
                     System.out.println("Has elegido la clase de Hechizero. Perfecto, ya sabemos que tu rol es ser gay.");
                     break;
                 case "brutalista":
+                case "Brutalista":
                     System.out.println("Has elegido la clase de Brutalista. Espero que tus nudillos estén listos para hacer música en la cara de tus enemigos.");
                     break;
                 case "judio":
                 case "judío":
+                case "Judio":
+                case "Judío":
                     System.out.println("Has elegido la clase de Judío. Cuidado con tus enemigos, podrían ser más persistentes que un cobrador de impuestos en la época de los nazis.");
                     break;
                 default:
                     System.out.println("Clase no permitida, inténtelo de nuevo: ");
-                    opcion = s.nextLine().toLowerCase();
+                    opcion = s.nextLine();
                     continue;
             }
             break; 
@@ -64,6 +67,7 @@ public class Story {
     public static boolean combat_condor() {
 
         ASCIIart._fight();
+        System.out.println();
 
         boolean combate = false;
 

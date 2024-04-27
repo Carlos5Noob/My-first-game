@@ -8,7 +8,7 @@ public class Minigames {
 
     public static boolean adivinarNumero() {
 
-        final int x = (int) (Math.random() * 11);
+        final int x = (int) (Math.random() * 10 + 1);
         boolean adivina = false;
 
         int contador = 3;
@@ -35,6 +35,87 @@ public class Minigames {
         } while (contador != 0);
 
         return adivina;
+    }
+
+    public static int rock_paper_scissors_game() {
+        System.out.println(
+                "Bienvenido al juego de piedra, papel o tijeras, donde la suerte puede estar de tu lado... o no.");
+        System.out.println("En este combate tendrás 3 turnos, quien gane 2 gana el juego. ");
+        int cont = 3;
+        int jugadorGana = 0;
+        int cpuGana = 0;
+
+        do {
+            System.out.println("Tu turno: ");
+            System.out.println("1. Piedra");
+            System.out.println("2. Papel");
+            System.out.println("3. Tijeras");
+            int opcion_jugador = Integer.parseInt(scanner.nextLine());
+            String jugador = "";
+            switch (opcion_jugador) {
+                case 1:
+                    jugador = "Piedra";
+                    System.out.println("Has elegido " + jugador);
+                    break;
+
+                case 2:
+                    jugador = "Papel";
+                    System.out.println("Has elegido " + jugador);
+                    break;
+                case 3:
+                    jugador = "Tijeras";
+                    System.out.println("Has elegido " + jugador);
+                    break;
+            }
+
+            int opcion_cpu = (int) (Math.random() * 3 + 1);
+            String cpu = "";
+            switch (opcion_cpu) {
+                case 1:
+                    cpu = "Piedra";
+                    System.out.println("El enemigo ha elegido " + cpu);
+                    break;
+
+                case 2:
+                    cpu = "Papel";
+                    System.out.println("El enemigo ha elegido " + cpu);
+                    break;
+                case 3:
+                    cpu = "Tijeras";
+                    System.out.println("El enemigo ha elegido " + cpu);
+                    break;
+            }
+
+            if (jugador.equalsIgnoreCase(cpu)) {
+                System.out.println("¡Empate!");
+            } else if ((jugador.equalsIgnoreCase("Piedra") && cpu.equalsIgnoreCase("Tijeras")) ||
+                    (jugador.equalsIgnoreCase("Papel") && cpu.equalsIgnoreCase("Piedra")) ||
+                    (jugador.equalsIgnoreCase("Tijeras") && cpu.equalsIgnoreCase("Papel"))) {
+                System.out.println("¡Has ganado!");
+                jugadorGana++;
+            } else {
+                System.out.println("¡Has perdido!");
+                cpuGana++;
+            }
+
+            cont--;
+
+        } while (cont > 0);
+
+        System.out.println("Ha terminado el juego. Has obtenido " + jugadorGana + " puntos, y el rival ha obtenido " + cpuGana + " puntos.");
+
+        if (jugadorGana > cpuGana) {
+            System.out.println("¡Enhorabuena, has ganado el combate!");
+        } else if (jugadorGana < cpuGana) {
+            System.out.println("Qué pena! Has perdido el combate. Pierdes 40 de salud.");
+        } else {
+            System.out.println("El juego ha terminado en empate. Pierdes 20 de salud.");
+        }
+
+        int total = jugadorGana - cpuGana;
+
+        return total;
+
     }
 
     public static int trivial() {
