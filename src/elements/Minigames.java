@@ -44,6 +44,7 @@ public class Minigames {
         int cont = 3;
         int jugadorGana = 0;
         int cpuGana = 0;
+        int result;
 
         do {
             System.out.println("Tu turno: ");
@@ -106,15 +107,16 @@ public class Minigames {
 
         if (jugadorGana > cpuGana) {
             System.out.println("¡Enhorabuena, has ganado el combate!");
+            result = 0;
         } else if (jugadorGana < cpuGana) {
             System.out.println("Qué pena! Has perdido el combate. Pierdes 40 de salud.");
+            result = 40;
         } else {
             System.out.println("El juego ha terminado en empate. Pierdes 20 de salud.");
+            result = 20;
         }
 
-        int total = jugadorGana - cpuGana;
-
-        return total;
+        return result;
 
     }
 
@@ -397,7 +399,7 @@ public class Minigames {
                 break;
         }
 
-        System.out.println("Tercera pregunta: ¿En qué equipo de baloncesto juega Stephen Curry?");
+        System.out.println("Tercera pregunta: ¿En qué equipo de baloncesto juega Lebron James?");
         System.out
                 .println("-------------------------------------------------------------------------------------------");
         System.out.println("A) Boston Celtics");

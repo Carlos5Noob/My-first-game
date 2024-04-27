@@ -19,30 +19,16 @@ public class Main {
         }
 
         _showHP(salud_total);
-
         skip();
-        int trivial = Minigames.trivial();
 
-        salud_total -= trivial;
+        int cont = Story._story_third_section();
+
+        salud_total -= cont;
 
         _showHP(salud_total);
-
-
         skip();
-        int rock_paper_scissors_game = Minigames.rock_paper_scissors_game();
 
-        if (rock_paper_scissors_game < 0) {
-            salud_total -= 40;
-        } else if (rock_paper_scissors_game == 0) {
-            salud_total -= 20;
-        } else {
-            salud_total = salud_total;
-        }
-
-        _showHP(salud_total);
-
-
-
+        // si la salud del personaje llega a 0, la partida termina
         if (salud_total < 1) {
             System.out.println("GAME OVER");
             return;
@@ -50,12 +36,20 @@ public class Main {
 
     }
 
+    /**
+     * Método que muestra por consola la salud actual del personaje
+     * 
+     * @param salud
+     */
     public static void _showHP(int salud) {
 
         System.out.println("Salud actual del personaje: " + salud);
 
     }
 
+    /**
+     * Método para skipear pulsando la tecla Enter
+     */
     public static void skip() {
         Scanner s = new Scanner(System.in);
 
