@@ -37,6 +37,24 @@ public class Minigames {
         return adivina;
     }
 
+    public static void quiz() {
+        boolean correcto = false; 
+
+        while (!correcto) {
+            System.out.println("Tienes un número de cuatro dígitos. El primero es el doble del segundo, que es la mitad del tercero, que es el cuádruple del último. ¿Cuál es el número?");
+            System.out.println("Introduce tu respuesta: ");
+            int resp = Integer.parseInt(scanner.nextLine());
+
+            if (resp == 4214) {
+                correcto = true;
+                System.out.println("¡Correcto! Has abierto la puerta. ");
+            } else {
+                System.out.println("¡Has fallado! Inténtelo otra vez: \n");
+            }
+        }
+
+    }
+
     public static boolean penalti_game() {
         int cont = 5;
         int jugadorGana = 0;

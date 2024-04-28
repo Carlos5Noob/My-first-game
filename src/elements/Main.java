@@ -28,9 +28,25 @@ public class Main {
         _showHP(salud_total);
         skip();
 
+        Story._story_fourth_section();
+        skip();
+        Minigames.quiz();
+        skip();
+
+        Story._story_fifth_section();
+        skip();
+
+        boolean finalCombat = Story.combat_Halumberg();
+
+        if (finalCombat) {
+            Story.good_ending();
+        } else {
+            Story.bad_ending();
+        }
+
         // si la salud del personaje llega a 0, la partida termina
         if (salud_total < 1) {
-            System.out.println("GAME OVER");
+            ASCIIart._game_over();
             return;
         }
 
