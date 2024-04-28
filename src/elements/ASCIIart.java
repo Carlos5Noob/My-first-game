@@ -14,4 +14,17 @@ public class ASCIIart {
 
     }
 
+    public static void _goalkeeper() {
+
+        System.out.println(" _________________________________");
+        System.out.println(" |                               |");
+        System.out.println(" |                O              |");
+        System.out.println(" |               / \\             |");
+        System.out.println(" |           \\---|||---/         |");
+        System.out.println(" |               / \\             |");
+        System.out.println(" |             _/   \\_           |");
+        System.out.println(" |_______________________________|");
+
+    }
+
 }

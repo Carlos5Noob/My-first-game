@@ -37,6 +37,96 @@ public class Minigames {
         return adivina;
     }
 
+    public static boolean penalti_game() {
+        int cont = 5;
+        int jugadorGana = 0;
+        int cpuGana = 0;
+        boolean result = false;
+
+        do {
+
+            ASCIIart._goalkeeper();
+
+            System.out.println("\nElije dónde tirar: ");
+            System.out.println("1. Arriba derecha");
+            System.out.println("2. Abajo derecha");
+            System.out.println("3. Arriba izquierda");
+            System.out.println("4. Abajo izquierda");
+            System.out.println("5. Medio");
+
+            int opcion_jugador = Integer.parseInt(scanner.nextLine());
+            String jugador = "";
+
+            switch (opcion_jugador) {
+                case 1:
+                System.out.println("Has tirado a la esquina superior derecha. ");
+                jugador = "derUp";
+                break;
+                case 2:
+                System.out.println("Has tirado a la esquina inferior derecha. ");
+                jugador = "derDown";
+                break;
+                case 3:
+                System.out.println("Has tirado a la esquina superior izquierda. ");
+                jugador = "izqUp";
+                break;
+                case 4:
+                System.out.println("Has tirado a la esquina inferior izquierda. ");
+                jugador = "izqDown";
+                break;
+                case 5:
+                System.out.println("Has tirado al medio (eres gay). ");
+                jugador = "mid";
+                break;
+            }
+
+            int opcion_cpu = ((int) (Math.random() * 5 + 1));
+            String cpu = "";
+            switch (opcion_cpu) {
+                case 1:
+                System.out.println("El rival se ha tirado a la esquina superior derecha. ");
+                cpu = "derUp";
+                break;
+                case 2:
+                System.out.println("El rival se ha tirado a la esquina inferior derecha. ");
+                cpu = "derDown";
+                break;
+                case 3:
+                System.out.println("El rival se ha tirado a la esquina superior izquierda. ");
+                cpu = "izqUp";
+                break;
+                case 4:
+                System.out.println("El rival se ha tirado a la esquina inferior izquierda. ");
+                cpu = "izqDown";
+                break;
+                case 5:
+                System.out.println("El rival se ha tirado al medio. ");
+                cpu = "mid";
+                break;
+            }
+
+            if (jugador.equalsIgnoreCase(cpu)) {
+                System.out.println("El rival ha parado el penalti");
+                cpuGana++;
+            } else {
+                System.out.println("Has marcado gol");
+                jugadorGana++;
+            }
+
+            cont--;
+
+        } while (cont > 0);
+
+        if (jugadorGana > cpuGana) {
+            System.out.println("¡Has ganado el combate!");
+            result = true;
+        } else {
+            System.out.println("Has perdido el combate... ¡Qué lástima!");
+        }
+
+        return result;
+    }
+
     public static int rock_paper_scissors_game() {
         System.out.println(
                 "Bienvenido al juego de piedra, papel o tijeras, donde la suerte puede estar de tu lado... o no.");
